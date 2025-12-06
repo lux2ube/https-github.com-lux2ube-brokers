@@ -1,7 +1,7 @@
 import React from 'react';
 import { BROKERS } from './constants';
 import { BrokerCard } from './components/BrokerCard';
-import { Sparkles, ThumbsUp, Timer, Gift, MessageCircle } from 'lucide-react';
+import { Sparkles, ThumbsUp, Timer, Gift, MessageCircle, MoreHorizontal } from 'lucide-react';
 
 const App: React.FC = () => {
   // Split brokers: First 2 are top recommendations, rest are others
@@ -57,7 +57,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Header - Redesigned */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
            <div className="inline-flex items-center justify-center relative">
               <h1 className="text-xl md:text-2xl font-bold text-slate-800 relative z-10 px-2">
                 خيارات تم اقتراحها لك بعناية
@@ -68,12 +68,17 @@ const App: React.FC = () => {
         </div>
 
         {/* Top Picks Section */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 mb-5 border-b border-slate-200 pb-3">
-            <Sparkles className="w-5 h-5 text-brand-500 fill-brand-500" />
-            <h2 className="text-xl font-bold text-slate-900">
-              أفضل الخيارات للبدء
-            </h2>
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-brand-50 rounded-lg border border-brand-100 shadow-sm">
+                <Sparkles className="w-5 h-5 text-brand-600 fill-brand-100" />
+            </div>
+            <div>
+                <h2 className="text-xl font-bold text-slate-900">
+                أفضل الخيارات للبدء
+                </h2>
+                <p className="text-xs text-slate-500 font-medium mt-1">الأعلى تقييماً والأكثر سهولة في الاستخدام</p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -87,17 +92,31 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Other Picks Section */}
+        {/* Other Picks Section - CLEARLY DIFFERENTIATED */}
         {otherPicks.length > 0 && (
-          <div>
-            <div className="flex items-center gap-2 mb-5 border-b border-slate-200 pb-3">
-               <ThumbsUp className="w-5 h-5 text-slate-400" />
-               <h2 className="text-lg font-bold text-slate-700">
-                 خيارات قد تعجبك
+          <div className="relative mt-16 pt-12">
+            
+            {/* Visual Separator */}
+            <div className="absolute top-0 inset-x-0 flex items-center justify-center">
+                 <div className="w-full h-px bg-slate-200 border-t border-dashed border-slate-300"></div>
+                 <div className="absolute bg-slate-50 px-4 text-slate-300">
+                    <MoreHorizontal className="w-6 h-6" />
+                 </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center mb-10 text-center">
+               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 text-slate-500 mb-3 shadow-inner ring-4 ring-white">
+                  <ThumbsUp className="w-5 h-5" />
+               </div>
+               <h2 className="text-xl font-bold text-slate-700">
+                 خيارات أخرى قد تعجبك
                </h2>
+               <p className="text-sm text-slate-400 mt-2 max-w-md mx-auto leading-relaxed">
+                 مجموعة مختارة من الوسطاء الموثوقين بمميزات متنوعة تناسب احتياجات مختلفة
+               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-95">
               {otherPicks.map(broker => (
                 <BrokerCard 
                   key={broker.id} 
