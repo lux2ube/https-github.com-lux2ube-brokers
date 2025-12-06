@@ -1,4 +1,5 @@
 
+
 import { Broker, BrokerType } from './types';
 
 export const BROKERS: Broker[] = [
@@ -67,7 +68,7 @@ export const BROKERS: Broker[] = [
     metrics: { fees: 92, usability: 95, assets: 85, research: 75, support: 85 },
     regulation: 'FSCA',
     paymentMethods: ['CoinCash', 'بطاقات بنكية', 'عملات رقمية'],
-    link: 'https://headway.partners/user/signup?hwp=50ca6f'
+    link: 'https://hw.online/user/signup?hwp=50ca6f'
   },
   {
     id: 'litefinance',
