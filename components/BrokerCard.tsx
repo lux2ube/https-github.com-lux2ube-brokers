@@ -112,7 +112,8 @@ export const BrokerCard: React.FC<BrokerCardProps> = ({ broker, isRecommended })
 
       {/* Payment Methods Section - CoinCash & General Crypto Only */}
       {(hasCoinCash || hasCrypto) && (
-        <div className="mt-4 px-6 py-3 bg-slate-50/50 border-t border-slate-100 min-h-[50px] flex items-center">
+        <div className="mt-4 px-6 py-3 bg-slate-50/50 border-t border-slate-100">
+          <p className="text-[10px] font-bold text-slate-400 mb-2">طرق الدفع</p>
           <div className="flex flex-wrap gap-2 w-full">
             {hasCoinCash && (
                <a 
