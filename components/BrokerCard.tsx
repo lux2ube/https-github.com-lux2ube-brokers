@@ -4,7 +4,6 @@ import {
   Star, 
   ArrowLeft, 
   CheckCircle2, 
-  Wallet, 
   Coins, 
   Banknote, 
   Bitcoin, 
@@ -16,7 +15,7 @@ import {
   Layers,
   Zap,
   CheckCircle,
-  ExternalLink
+  MessageCircle
 } from 'lucide-react';
 import { BrokerRadarChart } from './RadarChart';
 
@@ -112,31 +111,31 @@ export const BrokerCard: React.FC<BrokerCardProps> = ({ broker, isRecommended })
       )}
 
       {/* Payment Methods Section - CoinCash & General Crypto Only */}
-      <div className="mt-4 px-6 py-3 bg-slate-50/50 border-t border-slate-100 min-h-[60px] flex flex-col justify-center">
-        <div className="flex items-center gap-2 mb-2">
-          <Wallet className="w-3.5 h-3.5 text-slate-400" />
-          <p className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">الإيداع السريع عبر</p>
+      {(hasCoinCash || hasCrypto) && (
+        <div className="mt-4 px-6 py-3 bg-slate-50/50 border-t border-slate-100 min-h-[50px] flex items-center">
+          <div className="flex flex-wrap gap-2 w-full">
+            {hasCoinCash && (
+               <a 
+                 href="https://wa.me/967739032432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D8%AA%D8%AF%D8%A7%D9%88%D9%84%20%D9%88%D8%B9%D9%85%D9%88%D9%84%D8%A9%20%D8%A7%D9%84%D9%80%200%25"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-brand-400 to-brand-600 text-white shadow-md shadow-brand-200 transform hover:scale-105 transition-transform cursor-pointer ring-1 ring-brand-300 hover:no-underline flex-grow sm:flex-grow-0 justify-center"
+               >
+                 <Coins className="w-3.5 h-3.5 text-brand-100" />
+                 كوين كاش ايداع مباشر
+                 <MessageCircle className="w-3.5 h-3.5 mr-1 opacity-90" />
+               </a>
+            )}
+            
+            {hasCrypto && (
+              <span className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600">
+                 <Bitcoin className="w-3 h-3 text-slate-400" />
+                عملات رقمية
+              </span>
+            )}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {hasCoinCash && (
-             <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-brand-400 to-brand-600 text-white shadow-md shadow-brand-200 transform hover:scale-105 transition-transform cursor-default ring-1 ring-brand-300">
-               <Coins className="w-3.5 h-3.5 text-brand-100" />
-               كوين كاش ايداع مباشر
-             </span>
-          )}
-          
-          {hasCrypto && (
-            <span className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-600">
-               <Bitcoin className="w-3 h-3 text-slate-400" />
-              عملات رقمية
-            </span>
-          )}
-          
-          {!hasCoinCash && !hasCrypto && (
-             <span className="text-xs text-slate-400 italic">طرق دفع متعددة</span>
-          )}
-        </div>
-      </div>
+      )}
 
       {/* Expanded Details Section */}
       {isExpanded && (
