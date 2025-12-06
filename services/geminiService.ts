@@ -4,7 +4,16 @@ import { AiMatchResponse } from '../types';
 
 // Initialize Gemini Client
 // Note: process.env.API_KEY is expected to be available in the build environment.
-const apiKey = process.env.API_KEY || ''; 
+// Safe access to process.env to avoid "process is not defined" error in browser
+const getApiKey = () => {
+  try {
+    return (typeof process !== 'undefined' && process.env) ? (process.env.API_KEY || '') : '';
+  } catch (e) {
+    return '';
+  }
+};
+
+const apiKey = getApiKey();
 const ai = new GoogleGenAI({ apiKey });
 
 export const getGeminiRecommendations = async (userQuery: string): Promise<AiMatchResponse> => {
