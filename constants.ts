@@ -3,38 +3,6 @@ import { Broker, BrokerType } from './types';
 
 export const BROKERS: Broker[] = [
   {
-    id: 'headway',
-    name: 'HeadWay',
-    tagline: 'الخيار الأسهل .. ابدأ استثمارك بـ 1$ فقط',
-    description: `تعتبر شركة Headway من الشركات الرائدة والصاعدة في شركات الوساطة المالية في أسواق التداول عبر الإنترنت، حيث تقدم طيفاً واسعاً من المنتجات في صناعة الـ Fintech.
-
-تبدأ من حسابات التداول المتنوعة بحسب قدرات واحتياجات المستخدمين، كحساب السنت للمتداولين المبتدئين، وحساب الستاندرد للمتداولين المتمرسين، وأيضاً حساب البرو للمتداولين المحترفين، مما يجعل الشركة تغطي احتياجات جميع العملاء.
-
-كما تقدم عروضاً مميزة لتجربة المنصة كعرض 111 دولار، وعروضاً تشجيعية رائعة (تداول واكسب هدايا)، وعروضاً إنسانية كعرض "طريق الحلم".
-
-تقدم الشركة للشركاء برنامج الشراكة حيث تتقاسم الشركة الاسبريد مع وكلائها حول العالم، وعرض خاص بالوكلاء Cash Booster. كما تقدم خدمة النسخ Copytrade. وتمتاز بمنتج فريد ومبتكر هو الاستثمار العقاري من خلال خدمة NOVA المرتبطة بتقنية سلسلة الكتل (Blockchain).
-
-يسعدنا أن نكون مودع محلي للشركة لتسهيل معاملات العملاء في اليمن والوطن العربي ولنكون شركاء النجاح مع الشركة.`,
-    wikiFxInfo: {
-      platforms: ['MetaTrader 4', 'MetaTrader 5'],
-      accounts: ['Cent', 'Standard', 'Pro'],
-      assets: ['فوركس', 'عملات رقمية', 'معادن', 'طاقة', 'أسهم', 'مؤشرات'],
-      leverage: 'غير محدودة'
-    },
-    logoColor: 'bg-blue-600',
-    logoUrl: 'https://hw.online/wp-content/themes/headway/img/logo.svg',
-    types: [BrokerType.FOREX, BrokerType.CRYPTO, BrokerType.CFD],
-    minDeposit: 1,
-    rating: 4.8,
-    features: ['تستطيع البدأ بدولار', 'سهلة جداً في الاستخدام'],
-    pros: ['ابدأ بـ 1$ فقط', 'سحب فوري', 'سهلة جداً في الاستخدام'],
-    cons: ['جديد نسبياً في السوق', 'مكتبة تعليمية محدودة'],
-    metrics: { fees: 92, usability: 95, assets: 85, research: 75, support: 85 },
-    regulation: 'FSCA',
-    paymentMethods: ['CoinCash', 'بطاقات بنكية', 'عملات رقمية'],
-    link: 'https://headway.partners/user/signup?hwp=50ca6f'
-  },
-  {
     id: 'monaxa',
     name: 'Monaxa',
     tagline: 'اقتنص الأرباح .. بسبريد منخفض وتنفيذ فوري',
@@ -68,6 +36,38 @@ export const BROKERS: Broker[] = [
     regulation: 'SVGFSA',
     paymentMethods: ['TRC20', 'بنوك محلية', 'عملات رقمية'],
     link: 'https://account.monaxa.com/ar/links/go/19794'
+  },
+  {
+    id: 'headway',
+    name: 'HeadWay',
+    tagline: 'الخيار الأسهل .. ابدأ استثمارك بـ 1$ فقط',
+    description: `تعتبر شركة Headway من الشركات الرائدة والصاعدة في شركات الوساطة المالية في أسواق التداول عبر الإنترنت، حيث تقدم طيفاً واسعاً من المنتجات في صناعة الـ Fintech.
+
+تبدأ من حسابات التداول المتنوعة بحسب قدرات واحتياجات المستخدمين، كحساب السنت للمتداولين المبتدئين، وحساب الستاندرد للمتداولين المتمرسين، وأيضاً حساب البرو للمتداولين المحترفين، مما يجعل الشركة تغطي احتياجات جميع العملاء.
+
+كما تقدم عروضاً مميزة لتجربة المنصة كعرض 111 دولار، وعروضاً تشجيعية رائعة (تداول واكسب هدايا)، وعروضاً إنسانية كعرض "طريق الحلم".
+
+تقدم الشركة للشركاء برنامج الشراكة حيث تتقاسم الشركة الاسبريد مع وكلائها حول العالم، وعرض خاص بالوكلاء Cash Booster. كما تقدم خدمة النسخ Copytrade. وتمتاز بمنتج فريد ومبتكر هو الاستثمار العقاري من خلال خدمة NOVA المرتبطة بتقنية سلسلة الكتل (Blockchain).
+
+يسعدنا أن نكون مودع محلي للشركة لتسهيل معاملات العملاء في اليمن والوطن العربي ولنكون شركاء النجاح مع الشركة.`,
+    wikiFxInfo: {
+      platforms: ['MetaTrader 4', 'MetaTrader 5'],
+      accounts: ['Cent', 'Standard', 'Pro'],
+      assets: ['فوركس', 'عملات رقمية', 'معادن', 'طاقة', 'أسهم', 'مؤشرات'],
+      leverage: 'غير محدودة'
+    },
+    logoColor: 'bg-blue-600',
+    logoUrl: 'https://hw.online/wp-content/themes/headway/img/logo.svg',
+    types: [BrokerType.FOREX, BrokerType.CRYPTO, BrokerType.CFD],
+    minDeposit: 1,
+    rating: 4.8,
+    features: ['تستطيع البدأ بدولار', 'سهلة جداً في الاستخدام'],
+    pros: ['ابدأ بـ 1$ فقط', 'سحب فوري', 'سهلة جداً في الاستخدام'],
+    cons: ['جديد نسبياً في السوق', 'مكتبة تعليمية محدودة'],
+    metrics: { fees: 92, usability: 95, assets: 85, research: 75, support: 85 },
+    regulation: 'FSCA',
+    paymentMethods: ['CoinCash', 'بطاقات بنكية', 'عملات رقمية'],
+    link: 'https://headway.partners/user/signup?hwp=50ca6f'
   },
   {
     id: 'litefinance',
